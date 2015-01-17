@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Send It</string>
+    <string name="app_description">We will pick your item up &amp;</string>
+    <string name="app_description2">send it to wherever you want</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_choose_destination">Choose Destination</string>
+
+</resources>
