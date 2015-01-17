@@ -14,8 +14,6 @@ import android.widget.TextView;
  */
 public class OrderActivity extends Activity {
 
-
-    public class MyActivity extends Activity {
         Button send;
         TextView cost, minutes, number;
 
@@ -59,4 +57,4 @@ public class OrderActivity extends Activity {
     }
 
 
-}
+
