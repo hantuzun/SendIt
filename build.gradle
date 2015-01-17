@@ -12,14 +12,6 @@ buildscript {
     }
 }
 
-android {
-    signingConfigs {
-        debug {
-            storeFile file("debug.keystore")
-        }
-    }
-}
-
 allprojects {
     repositories {
         jcenter()
