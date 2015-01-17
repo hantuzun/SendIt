@@ -26,7 +26,6 @@ public class ChooseDestinationActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_destination);
         setUpMapIfNeeded();
-
     }
 
     @Override
