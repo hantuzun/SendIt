@@ -47,6 +47,10 @@
             android:name=".TrackActivity"
             android:label="@string/title_activity_track" >
         </activity>
+        <activity
+            android:name=".DeliveredActivity"
+            android:label="@string/title_activity_delivered" >
+        </activity>
     </application>
 
 </manifest>

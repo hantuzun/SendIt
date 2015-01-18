@@ -1,0 +1,30 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.example.emrehantuzun.sendit.DeliveredActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="YOUR ITEM HAS BEEN DELIVERED!"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textSize="60dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND IT AGAIN!"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="100dp"
+            android:textSize="30dp" />
+    </FrameLayout>
+</FrameLayout>

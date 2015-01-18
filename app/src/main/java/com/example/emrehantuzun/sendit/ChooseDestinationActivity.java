@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
@@ -56,6 +57,7 @@ public class ChooseDestinationActivity extends FragmentActivity {
     String fee = "";
     String currency = "";
     String duration = "";
+    String quote_id = "";
 
     private class GetQuote extends AsyncTask<Void, Void, HttpResponse> {
 
@@ -91,11 +93,14 @@ public class ChooseDestinationActivity extends FragmentActivity {
         protected void onPostExecute(HttpResponse response) {
             try {
                 String responseString = EntityUtils.toString(response.getEntity());
+
                 JSONObject responseObject = new JSONObject(responseString);
+
                 fee = Double.toString(responseObject.getInt("fee") / 100.0).replaceAll("\\.?0*$", "");
                 currency = responseObject.getString("currency");
                 currency = currency.replace("usd", "$");
                 duration = responseObject.getString("duration");
+                quote_id = responseObject.getString("id");
 
                 showQuote();
             } catch (Exception e) {
@@ -123,6 +128,7 @@ public class ChooseDestinationActivity extends FragmentActivity {
         post = new HttpPost("https://api.postmates.com/v1/customers/cus_K81xUn9jAY2_3F/delivery_quotes");
     }
 
+
     public void nextActivity (View view) {
         Location currentLocation = locationManager.getLastKnownLocation(provider);
 
@@ -134,6 +140,7 @@ public class ChooseDestinationActivity extends FragmentActivity {
         intent.putExtra("targetLng", targetLng);
         intent.putExtra("currentLat", currentLocation.getLatitude());
         intent.putExtra("currentLng", currentLocation.getLongitude());
+        intent.putExtra("quote_id", quote_id);
         startActivity(intent);
     }
 

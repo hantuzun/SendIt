@@ -106,13 +106,14 @@
             android:layout_below="@+id/description"
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:gravity="top"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/my_number"
-            android:hint="MY NUMBER"
+            android:hint="MY NUMBER (XXX-XXX-XXXX)"
             android:layout_below="@+id/my_name"
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
@@ -134,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/number"
-            android:hint="RECIPIENT NUMBER"
+            android:hint="RECIPIENT NUMBER (XXX-XXX-XXXX)"
             android:layout_below="@+id/name"
             android:padding="20dp" />
 

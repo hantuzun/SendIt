@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -56,37 +57,55 @@ public class ConfirmationActivity extends Activity {
                 EditText editText;
                 editText = (EditText) findViewById(R.id.description);
                 if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_LONG).show();
                     editText.setError( "Required Field" );
                     return;
                 }
 
                 editText = (EditText) findViewById(R.id.my_name);
                 if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_LONG).show();
                     editText.setError( "Required Field" );
                     return;
                 }
 
                 editText = (EditText) findViewById(R.id.my_number);
                 if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_LONG).show();
                     editText.setError( "Required Field" );
                     return;
                 }
 
                 editText = (EditText) findViewById(R.id.name);
                 if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_LONG).show();
                     editText.setError( "Required Field" );
                     return;
                 }
 
                 editText = (EditText) findViewById(R.id.number);
                 if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_LONG).show();
                     editText.setError( "Required Field" );
                     return;
                 }
 
+                editText = (EditText) findViewById(R.id.number);
+                if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Phone numbers must be in XXX-XXX-XXXX format.", Toast.LENGTH_LONG).show();
+                    editText.setError( "Phone numbers must be in XXX-XXX-XXXX format." );
+                    return;
+                }
+
+                editText = (EditText) findViewById(R.id.my_number);
+                if( editText.getText().toString().length() == 0 ) {
+                    Toast.makeText(getApplicationContext(), "Phone numbers must be in XXX-XXX-XXXX format.", Toast.LENGTH_LONG).show();
+                    editText.setError( "Phone numbers must be in XXX-XXX-XXXX format." );
+                    return;
+                }
                 Intent intent = new Intent(getApplicationContext(), TrackActivity.class);
                 intent.putExtra("manifest", ((EditText) findViewById(R.id.description)).getText().toString());
-                intent.putExtra("pickup_business_name", ((EditText) findViewById(R.id.my_name)).getText().toString());
+                intent.putExtra("pickup_name", ((EditText) findViewById(R.id.my_name)).getText().toString());
                 intent.putExtra("pickup_phone_number", ((EditText) findViewById(R.id.my_number)).getText().toString());
                 intent.putExtra("dropoff_name", ((EditText) findViewById(R.id.name)).getText().toString());
                 intent.putExtra("dropoff_phone_number", ((EditText) findViewById(R.id.number)).getText().toString());
