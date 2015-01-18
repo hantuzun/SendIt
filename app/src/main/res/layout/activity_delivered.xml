@@ -16,15 +16,17 @@
             android:text="YOUR ITEM HAS BEEN DELIVERED!"
             android:id="@+id/textView"
             android:layout_gravity="center"
-            android:textSize="60dp" />
+            android:textSize="50dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SEND IT AGAIN!"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="100dp"
-            android:textSize="30dp" />
     </FrameLayout>
+
+    <Button
+        android:onClick="sendItAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEND AGAIN!"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="30dp"
+        android:textSize="30dp" />
 </FrameLayout>

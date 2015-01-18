@@ -88,6 +88,8 @@
         android:layout_below="@+id/view">
 
         <EditText
+            android:lines="1"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/description"
@@ -96,9 +98,12 @@
             android:layout_centerHorizontal="true"
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:text="Frozen Penguins" />
 
         <EditText
+            android:lines="1"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/my_name"
@@ -107,9 +112,12 @@
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
             android:padding="20dp"
-            android:gravity="top"/>
+            android:gravity="top"
+            android:text="John Doe" />
 
         <EditText
+            android:lines="1"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/my_number"
@@ -117,10 +125,13 @@
             android:layout_below="@+id/my_name"
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:text="917-863-0737" />
         
         
         <EditText
+            android:lines="1"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name"
@@ -128,7 +139,8 @@
             android:layout_below="@+id/my_number"
             android:layout_alignLeft="@+id/number"
             android:layout_alignRight="@+id/number"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:text="Jane Brown" />
 
         <EditText
             android:layout_centerHorizontal="true"
@@ -137,13 +149,15 @@
             android:id="@+id/number"
             android:hint="RECIPIENT NUMBER (XXX-XXX-XXXX)"
             android:layout_below="@+id/name"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:text="917-393-8732" />
 
 
         <EditText
+            android:lines="1"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/note"
             android:layout_below="@+id/number"
@@ -155,7 +169,9 @@
             android:layout_alignRight="@+id/number"/>
 
         <Button
-            android:text="CONFIRM"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="SEND IT NOW!"
             android:id="@+id/butConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

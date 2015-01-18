@@ -33,6 +33,7 @@ public class ConfirmationActivity extends Activity {
         intent_currency = intent.getStringExtra("currency");
         intent_fee = intent.getStringExtra("fee");
         intent_duration = intent.getStringExtra("duration");
+
         intent_targetLat = intent.getDoubleExtra("targetLat", 0.0);
         intent_targetLng = intent.getDoubleExtra("targetLng", 0.0);
         intent_currentLat = intent.getDoubleExtra("currentLat", 0.0);
@@ -44,7 +45,7 @@ public class ConfirmationActivity extends Activity {
         fee_value = (TextView) findViewById(R.id.fee_value);
         fee_value.setText(intent_currency + intent_fee);
         duration_value = (TextView) findViewById(R.id.duration_value);
-        duration_value.setText(intent_duration + " minutes");
+        duration_value.setText(intent_duration + " mins");
 
         createButton();
     }

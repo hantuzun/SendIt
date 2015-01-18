@@ -1,5 +1,6 @@
 package com.example.emrehantuzun.sendit;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -46,6 +47,11 @@ public class DeliveredActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendItAgain(View view) {
+        Intent intent = new Intent(this, ChooseDestinationActivity.class);
+        startActivity(intent);
     }
 
     /**
