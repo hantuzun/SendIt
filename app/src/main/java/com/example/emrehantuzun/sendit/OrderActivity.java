@@ -1,6 +1,7 @@
 package com.example.emrehantuzun.sendit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,7 +31,8 @@ public class OrderActivity extends Activity {
             send.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent myIntent = new Intent(OrderActivity.this, Confirmation.class);
+                    startActivity(myIntent);
                 }
             });
         }
