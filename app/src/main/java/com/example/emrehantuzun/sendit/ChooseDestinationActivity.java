@@ -10,31 +10,49 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.view.View;
+import android.util.Log;
+import android.view.*;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.*;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ChooseDestinationActivity extends FragmentActivity{
+import static com.google.android.gms.maps.GoogleMap.*;
+
+public class ChooseDestinationActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-    Button btn;
+    ImageButton btn;
+    private Marker marker;
+    MapView mapview;
+    Double latitude;
+    Double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        btn = (Button) findViewById(R.id.orderInt);
+        btn = (ImageButton) findViewById(R.id.orderInt);
         setContentView(R.layout.activity_choose_destination);
         setUpMapIfNeeded();
+
     }
+
+
+
     public void nextActivity (View view) {
                 Intent myIntent = new Intent(ChooseDestinationActivity.this, OrderActivity.class);
                 startActivity(myIntent);
+
     }
 
     @Override
@@ -42,6 +60,8 @@ public class ChooseDestinationActivity extends FragmentActivity{
         super.onResume();
         setUpMapIfNeeded();
     }
+
+
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
@@ -69,6 +89,7 @@ public class ChooseDestinationActivity extends FragmentActivity{
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
                 setUpMap();
+
             }
         }
     }
@@ -80,11 +101,27 @@ public class ChooseDestinationActivity extends FragmentActivity{
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.setMyLocationEnabled(true);
 
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+
+            @Override
+            public void onMapClick(LatLng point) {
+                Toast.makeText(ChooseDestinationActivity.this, point.latitude+" "+point.longitude, Toast.LENGTH_SHORT).show();
+
+                mMap.clear();
+                MarkerOptions marker = new MarkerOptions()
+                        .position(new LatLng(point.latitude, point.longitude))
+                        .title("New Marker");
+                mMap.addMarker(marker);
+                latitude = point.latitude;
+                longitude = point.longitude;
+
+
+            }
+        });
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
-
         Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
         if (location != null) {
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
@@ -95,6 +132,8 @@ public class ChooseDestinationActivity extends FragmentActivity{
                     .zoom(17)                   // Sets the zoom
                     .build();                   // Creates a CameraPosition from the builder
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
         }
     }
+
 }
