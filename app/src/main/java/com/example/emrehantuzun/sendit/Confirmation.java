@@ -1,11 +1,9 @@
 package com.example.emrehantuzun.sendit;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +25,7 @@ public class Confirmation extends Activity {
         confirm = (Button) findViewById(R.id.butConfirm);
         fee = (TextView) findViewById(R.id.fee);
         timeVal = (TextView) findViewById(R.id.timeVal);
-        noters = (EditText) findViewById(R.id.notes);
+        noters = (EditText) findViewById(R.id.noters);
     }
 
     @Override

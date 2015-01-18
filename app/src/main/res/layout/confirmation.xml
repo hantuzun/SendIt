@@ -24,25 +24,6 @@
         android:layout_marginTop="140dp"
         android:id="@+id/layout2">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/dummy1"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/notes"
-            android:hint="Notes"
-            android:layout_above="@+id/butConfirm"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText"
-            android:layout_below="@+id/editText4"
-            android:layout_toRightOf="@+id/butConfirm"
-            android:layout_toEndOf="@+id/butConfirm" />
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,9 +37,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText"
             android:hint="Object Description"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/editText4"
+            android:layout_toLeftOf="@+id/butConfirm"
+            android:layout_toStartOf="@+id/butConfirm" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -74,9 +55,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText4"
             android:hint="Recipient Phone Number"
-            android:layout_alignRight="@+id/dummy1"
-            android:layout_alignEnd="@+id/dummy1"
-            android:layout_centerVertical="true" />
+            android:layout_below="@+id/editText3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noters"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="Notes" />
 
     </RelativeLayout>
 
@@ -98,14 +87,6 @@
         android:text="Duration:"
         android:id="@+id/Time"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/view"
-        android:layout_toEndOf="@+id/view" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_alignBottom="@+id/view2"
         android:layout_toRightOf="@+id/view"
         android:layout_toEndOf="@+id/view" />
 

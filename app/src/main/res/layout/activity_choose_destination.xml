@@ -3,42 +3,36 @@ android:id="@+id/fram_map"
 android:layout_width="fill_parent"
 android:layout_height="fill_parent" >
 
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" android:id="@+id/map"
         tools:context="com.example.emrehantuzun.sendit.ChooseDestinationActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-<Button
-    android:id="@+id/dummy"
-    android:text="GO"
-    android:onClick="nextActivity"
-    android:layout_width="40dp"
-    android:layout_height="37dp"
-    android:layout_gravity="right|top"
-    android:layout_marginTop="0dp"
-    android:layout_marginRight="11dp" />
-
-    <EditText
-        android:id="@+id/mapSearchBox"
+    <TableRow
         android:layout_width="fill_parent"
-        android:hint="   Search Address"
-        android:inputType="text"
-        android:layout_marginTop="2dp"
-        android:layout_height="47dp"
-        android:layout_toLeftOf="@id/dummy"
-        android:background="#ffffff"
-        />
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/orderInt"
-        android:text="GO"
-        android:onClick="nextActivity"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="right|top"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="11dp"
-        android:background="@android:drawable/ic_media_next" />
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:queryHint="Search Destination"
+            android:id="@+id/search"
+            android:layout_gravity="center_horizontal|top"
+            android:background="#ffffff"
+            android:baselineAligned="true" />
+    </TableRow>
+
+        <ImageButton
+            android:id="@+id/orderInt"
+            android:text="GO"
+            android:onClick="nextActivity"
+            android:layout_gravity="bottom|right"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="16dp"
+            android:background="@android:drawable/ic_menu_send" />
 
 </FrameLayout>
