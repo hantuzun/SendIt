@@ -8,5 +8,7 @@
     <string name="title_activity_choose_destination">Choose Destination</string>
     <string name="hint">Search Address</string>
     <string name="search">Search Address</string>
+    <string name="title_activity_order">OrderActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

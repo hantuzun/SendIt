@@ -121,11 +121,9 @@ public class ChooseDestinationActivity extends FragmentActivity {
         setUpMapIfNeeded();
     }
 
-
-
     public void nextActivity (View view) {
-                Intent myIntent = new Intent(ChooseDestinationActivity.this, OrderActivity.class);
-                startActivity(myIntent);
+        Intent myIntent = new Intent(this, ConfirmationActivity.class);
+        startActivity(myIntent);
     }
 
     @Override
@@ -133,8 +131,6 @@ public class ChooseDestinationActivity extends FragmentActivity {
         super.onResume();
         setUpMapIfNeeded();
     }
-
-
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
