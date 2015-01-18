@@ -45,6 +45,8 @@ public class ChooseDestinationActivity extends FragmentActivity {
     LocationManager locationManager;
     Criteria criteria;
     String provider;
+    HttpClient client;
+    HttpPost post;
 
     Double targetLat;
     Double targetLng;
@@ -59,8 +61,6 @@ public class ChooseDestinationActivity extends FragmentActivity {
 
         @Override
         protected HttpResponse doInBackground(Void... params) {
-            HttpClient client = new DefaultHttpClient();
-            HttpPost post = new HttpPost("https://api.postmates.com/v1/customers/cus_K81xUn9jAY2_3F/delivery_quotes");
 
             try {
                 post.setHeader("Authorization", getB64Auth("c1338e55-3d4b-47a4-8b4c-43f2c519e94a", ""));
@@ -115,16 +115,26 @@ public class ChooseDestinationActivity extends FragmentActivity {
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         criteria = new Criteria();
         provider = locationManager.getBestProvider(criteria, false);
-        btn = (ImageButton) findViewById(R.id.orderInt);
 
         setContentView(R.layout.activity_choose_destination);
         setUpMapIfNeeded();
+
+        client = new DefaultHttpClient();
+        post = new HttpPost("https://api.postmates.com/v1/customers/cus_K81xUn9jAY2_3F/delivery_quotes");
     }
 
     public void nextActivity (View view) {
-        Intent intent = new Intent(this, ConfirmationActivity.class);
+        Location currentLocation = locationManager.getLastKnownLocation(provider);
 
-        startActivity(myIntent);
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        intent.putExtra("currency", currency);
+        intent.putExtra("fee", fee);
+        intent.putExtra("duration", duration);
+        intent.putExtra("targetLat", targetLat);
+        intent.putExtra("targetLng", targetLng);
+        intent.putExtra("currentLat", currentLocation.getLatitude());
+        intent.putExtra("currentLng", currentLocation.getLongitude());
+        startActivity(intent);
     }
 
     @Override

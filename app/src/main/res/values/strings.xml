@@ -10,5 +10,6 @@
     <string name="search">Search Address</string>
     <string name="title_activity_order">OrderActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_track">TrackActivity</string>
 
 </resources>
