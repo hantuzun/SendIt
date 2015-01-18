@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Price Quote"
-        android:id="@+id/Price"
+        android:id="@+id/price_title"
         android:layout_marginTop="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Price Quote"
         android:id="@+id/price"
-        android:layout_below="@+id/Price"
+        android:layout_below="@+id/price_title"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Duration"
-        android:id="@+id/time"
+        android:id="@+id/duration_title"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true" />
 
@@ -81,8 +81,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time"
-        android:id="@+id/Time"
-        android:layout_below="@+id/time"
+        android:id="@+id/duration"
+        android:layout_below="@+id/duration_title"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

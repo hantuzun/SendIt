@@ -1,12 +1,37 @@
 package com.example.emrehantuzun.sendit;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -14,18 +39,13 @@ import android.widget.TextView;
  */
 public class OrderActivity extends Activity {
 
-        Button send;
-        TextView cost, minutes, number;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.order);
-            send = (Button) findViewById(R.id.sendBut);
-            cost = (TextView) findViewById(R.id.price);
-            minutes = (TextView) findViewById(R.id.time);
-            number = (TextView) findViewById(R.id.phone);
 
+            setContentView(R.layout.order);
+            Button send = (Button) findViewById(R.id.sendBut);
 
             send.setOnClickListener(new View.OnClickListener() {
                 @Override
