@@ -122,7 +122,8 @@ public class ChooseDestinationActivity extends FragmentActivity {
     }
 
     public void nextActivity (View view) {
-        Intent myIntent = new Intent(this, ConfirmationActivity.class);
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+
         startActivity(myIntent);
     }
 

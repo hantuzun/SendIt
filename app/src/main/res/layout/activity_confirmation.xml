@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/layout1">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/fee"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:autoText="false"
+        android:text="$87" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="32 mins"/>
+
+    <View android:layout_height="1dip"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="135dp"
+        android:background="#ffffffff"
+        android:id="@+id/view2" />
+
+    <View android:layout_height="135dp"
+        android:layout_width="1dp"
+        android:background="#ffffff"
+        android:id="@+id/view"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/layout2"
+        android:layout_below="@+id/view2">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:hint="Recipient Name"
+            android:layout_below="@+id/name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/number"
+            android:hint="Recipient Phone Number"
+            android:layout_below="@+id/name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/note"
+            android:layout_below="@+id/number"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONFIRM"
+            android:id="@+id/butConfirm"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/note"
+            android:layout_below="@+id/number"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
